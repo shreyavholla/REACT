@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        Value 1 <input type="text" id="v1" /> <br />
+        Value 2 <input type="text" id="v2" /> <br />
+        Function <select id="op">
+            <option>--SELECT--</option>
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+        </select> <br/>
+        Result = <span id="res"></span>
+    </form>
+
+    <script>
+        //  var btn = document.getElementById("btn");
+        // btn.addEventListener("click", function(evt) {
+        //     console.log("l1");
+        // })
+        // btn.addEventListener("click", function(evt) {
+        //     var data1 = parseFloat(document.getElementById("v1").value)
+        //     var data2 = parseFloat(document.getElementById("v2").value)
+        //     document.getElementById("res").innerText = (data1 + data2)
+        // })
+
+      
+        var compute = document.getElementById("op");
+
+       compute.addEventListener("change", function(event){
+
+        var v1 = parseFloat(document.getElementById("v1").value)
+        var v2 = parseFloat(document.getElementById("v2").value)
+        var res = document.getElementById("res")
+
+        if(event.target.value === "add"){
+
+            res.innerText = (v1 + v2)
+        } else if(event.target.value === "subtract"){
+            res.innerText = (v1 - v2)
+        }else if(event.target.value === "multiply"){
+            res.innerText = (v1 * v2)
+        }
+       })
+
+    </script>
+</body>
+</html>

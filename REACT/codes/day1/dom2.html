@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        Value 1 <input type="text" id="v1" /> <br />
+        Value 2 <input type="text" id="v2" /> <br />
+        Result = <span id="res"></span>
+        <button type="button" id="btn">Add</button>
+    </form>
+    <script>
+        var btn = document.getElementById("btn");
+        btn.addEventListener("click", function(evt) {
+            console.log("l1");
+        })
+        btn.addEventListener("click", function(evt) {
+            var data1 = parseFloat(document.getElementById("v1").value)
+            var data2 = parseFloat(document.getElementById("v2").value)
+            document.getElementById("res").innerText = (data1 + data2)
+        })
+    </script>
+</body>
+</html>

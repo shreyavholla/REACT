@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function doTask() {
+            return new Promise( (resolve, reject) => {
+                // setTimeout(() => resolve("data from server!!!"), 2000);
+                setTimeout(() => reject("data doesn't exist in  server!!!"), 2000);
+            });
+        }
+
+        doTask().then(
+            data => console.log(data), // resolved
+            err => console.log("Boom :-(", err) // rejected
+        )
+        console.log("end!!!"); // not blocked
+    </script>
+</body>
+</html>
